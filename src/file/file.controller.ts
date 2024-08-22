@@ -12,7 +12,7 @@ export class FileController {
   async uploadFile(@UploadedFile() file: Express.Multer.File) {
     const fileId = await this.fileService.uploadFile(file);
     const message = 'file is uploaded successfully with id'+ fileId;
-    return {message};
+    return message;
   }
 
   @Get(':id')
